@@ -2,14 +2,14 @@ package services;
 
 import java.util.Set;
 
-public interface CrudService<T, ID> {
-    Set<T> findAll();
+public interface CrudService<Vet, ID> {
+    Set<Vet> findAll();
 
-    T findById(ID id);
+    Vet findById(ID id);
 
-    T save(T object);
+    Vet save(Vet object);
 
-    void delete(T object);
+    void delete(Vet object);
 
     void deleteById(ID id);
 }
