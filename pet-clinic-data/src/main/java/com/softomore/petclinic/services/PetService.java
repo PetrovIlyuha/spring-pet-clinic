@@ -1,4 +1,4 @@
-package services;
+package com.softomore.petclinic.services;
 
 import com.softomore.petclinic.model.Pet;
 

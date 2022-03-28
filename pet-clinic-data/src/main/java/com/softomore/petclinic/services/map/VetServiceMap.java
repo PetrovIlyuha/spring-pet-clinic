@@ -1,10 +1,12 @@
-package services.map;
+package com.softomore.petclinic.services.map;
 
 import com.softomore.petclinic.model.Vet;
-import services.VetService;
+import org.springframework.stereotype.Service;
+import com.softomore.petclinic.services.VetService;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {

@@ -19,6 +19,7 @@
             <artifactId>pet-clinic-data</artifactId>
             <groupId>com.softomore</groupId>
             <version>0.0.2-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

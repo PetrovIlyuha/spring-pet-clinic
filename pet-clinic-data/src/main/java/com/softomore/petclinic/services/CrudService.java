@@ -1,4 +1,4 @@
-package services;
+package com.softomore.petclinic.services;
 
 import java.util.Set;
 
