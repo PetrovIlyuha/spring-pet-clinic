@@ -5,6 +5,26 @@
     <title>All Our Vets</title>
 </head>
 <body>
-    <h1 th:text="'All Our Veterenarian Professionals'"></h1>
+    <h1 th:text="'Our Sertified Vets'"></h1>
+
+
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="vet: ${vets}">
+            <td th:text="${vet.id}">1</td>
+            <td th:text="${vet.firstName}">Jack</td>
+            <td th:text="${vet.lastName}">Marsian</td>
+        </tr>
+        </tbody>
+    </table>
 </body>
+
+
 </html>
