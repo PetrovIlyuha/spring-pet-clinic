@@ -2,14 +2,14 @@ package com.softomore.petclinic.services;
 
 import java.util.Set;
 
-public interface CrudService<T, ID> {
-    Set<T> findAll();
+public interface CrudService<Visit, ID> {
+    Set<Visit> findAll();
 
-    T findById(ID id);
+    Visit findById(ID id);
 
-    T save(T object);
+    Visit save(Visit object);
 
-    void delete(T object);
+    void delete(Visit object);
 
     void deleteById(ID id);
 }
