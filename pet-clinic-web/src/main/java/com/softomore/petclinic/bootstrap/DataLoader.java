@@ -1,10 +1,7 @@
 package com.softomore.petclinic.bootstrap;
 
 import com.softomore.petclinic.model.*;
-import com.softomore.petclinic.services.OwnerService;
-import com.softomore.petclinic.services.PetTypeService;
-import com.softomore.petclinic.services.SpecialtyService;
-import com.softomore.petclinic.services.VetService;
+import com.softomore.petclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,12 +14,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -84,6 +83,13 @@ public class DataLoader implements CommandLineRunner {
         katy.getPets().add(katysCat);
 
         ownerService.save(katy);
+
+        Visit katysCatVisit = new Visit();
+        katysCatVisit.setPet(katysCat);
+        katysCatVisit.setDate(LocalDate.now());
+        katysCatVisit.setDescription("Katy's cat have broken bone");
+
+        visitService.save(katysCatVisit);
 
         System.out.println("loaded 2 owners..");
 
